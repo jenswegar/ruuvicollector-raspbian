@@ -36,7 +36,9 @@ The image contains dependencies that are processor architecture dependent, so on
 
 1. Create the ruuvi-collector.properties and ruuvi-names.properties files and place them in the ```boot``` partition (same as the ssh file). These files will be copied to the correct location at startup, so whenever you need to do a change, simply modify the properties files here and reboot. See the  [RuuviCollector](https://github.com/Scrin/RuuviCollector/) project for the content of these files
 
-1. Provided the properties files and wifi config is correct and you have a influxdb reachable by the RPi, this should be enough to start the system collecting data.
+1. Provided the properties files and wifi config is correct and you have a influxdb reachable by the RPi, this should be enough to start the system collecting data. 
+
+Note: there may be an issue in which the .properties files are removed at first boot and thus not copied to the correct place. Simply create the files again and re-boot should fix it until I figure out what happens.
 
 1. Once the Raspberry Pi is up and running, first step should be to ssh into the device and changing the default password (the default is the same as for the official image)! While you're at it, why not add your own SSH key as well. The machine should be reachable at the address ```collectorpi.local```
 
