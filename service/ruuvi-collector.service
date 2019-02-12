@@ -1,0 +1,10 @@
+[Unit]
+ Description=RuuviCollector Agent
+ After=multi-user.target
+
+ [Service]
+ Type=idle
+ ExecStart=/usr/bin/java -jar /home/pi/collector/ruuvi-collector-0.2.jar
+
+ [Install]
+ WantedBy=multi-user.target

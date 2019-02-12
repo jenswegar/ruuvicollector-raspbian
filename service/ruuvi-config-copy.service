@@ -1,0 +1,13 @@
+[Unit]
+Description=Copy RuuviCollector config properties from root folder to correct location
+Before=ruuvi-collector.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/cp -fv /ruuvi-collector.properties /home/pi/collector
+ExecStart=/bin/cp -fv /ruuvi-names.properties /home/pi/collector
+ExecStart=/bin/chown pi:pi /home/pi/collector/ruuvi-collector.properties
+ExecStart=/bin/chown pi:pi /home/pi/collector/ruuvi-names.properties
+
+[Install]
+WantedBy=multi-user.target
