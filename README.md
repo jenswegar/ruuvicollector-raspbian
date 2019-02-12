@@ -38,7 +38,7 @@ The image contains dependencies that are processor architecture dependent, so on
 
 1. Provided the properties files and wifi config is correct and you have a influxdb reachable by the RPi, this should be enough to start the system collecting data.
 
-1. Once the Raspberry Pi is up and running, first step should be to ssh into the device and changing the default password (the default is the same as for the official image)! While you're at it, why not add your own SSH key as well.
+1. Once the Raspberry Pi is up and running, first step should be to ssh into the device and changing the default password (the default is the same as for the official image)! While you're at it, why not add your own SSH key as well. The machine should be reachable at the address ```collectorpi.local```
 
 ## Troubleshooting
 
@@ -100,7 +100,12 @@ hciconfig hci0 up
    sudo systemctl start ruuvi-config-copy
    ```
 
-The last step is just to test that the service can be run at some level. Without the properties files in place it will fail, but those should not be part of the image build as they contain sensitive data.
+   The last step is just to test that the service can be run at some level. Without the properties files in place it will fail, but those should not be part of the image build as they contain sensitive data.
+
+1. Clear history and logout
+    ```
+
+    ```
 
 ### Create distributable image
 
